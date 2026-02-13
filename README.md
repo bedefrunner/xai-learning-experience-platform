@@ -26,6 +26,79 @@ An AI-native Learning Experience Platform powered by **Grok AI** (xAI) that deli
 - **OpenAPI schema:** http://localhost:8000/api/openapi.json
 - Auto-generated TypeScript client from OpenAPI spec
 
+## 🚦 Getting Started
+
+### Prerequisites
+- Docker & Docker Compose
+- Node.js 18+
+- xAI API key (for Grok integration)
+
+### Setup
+
+1. **Set environment variable**
+```bash
+# Create backend/.env file
+echo "XAI_API_KEY=your_xai_api_key_here" > backend/.env
+```
+
+2. **Start backend (Docker)**
+```bash
+cd backend
+make up          # Start services
+make migrate     # Run migrations
+```
+
+3. **Start frontend**
+```bash
+cd frontend
+npm install
+npm run generate-client  # Generate TypeScript API client
+npm run dev
+```
+
+### Access the Application
+- **Frontend:** http://localhost:5173
+- **Backend API:** http://localhost:8000
+- **API Docs:** http://localhost:8000/api/docs
+
+### Useful Commands
+```bash
+make down        # Stop services
+make logs        # View logs
+make shell       # Django shell
+```
+
+## 🎯 Demo Credentials
+
+### Student Login
+- Email: `john.doe@email.com`
+- Password: `password123`
+
+### Educator Login
+- Email: `jane.smith@email.com`
+- Password: `password123`
+
+## 🧪 Testing the AI Features
+
+### 1. Test Personalized Learning Path Creation (Educator)
+1. Login as educator
+2. Click "Create Learning Path"
+3. Select student, subject, and difficulty
+4. Notice AI-generated goals appear after creation
+5. Goals are tailored to grade level and subject
+
+### 2. Test Context-Aware AI Mentor (Student)
+1. Login as student
+2. Click "AI Mentor" button
+3. Notice personalized greeting with your progress
+4. Ask subject-specific questions
+5. AI knows your learning context and mastery levels
+
+**Try these prompts:**
+- "Can you help me with the topics I'm struggling with?"
+- "What should I focus on to improve my grade?"
+- "Explain [difficult topic] in simple terms"
+
 ## 🌟 Key Features
 
 ### 1. **AI-Powered Personalized Learning Paths**
@@ -99,79 +172,6 @@ Context-aware learning assistant with access to:
 - Detailed learning path breakdowns
 - Identify struggling students via mastery metrics
 - Access to AI-generated goals and recommended resources
-
-## 🚦 Getting Started
-
-### Prerequisites
-- Docker & Docker Compose
-- Node.js 18+
-- xAI API key (for Grok integration)
-
-### Setup
-
-1. **Set environment variable**
-```bash
-# Create backend/.env file
-echo "XAI_API_KEY=your_xai_api_key_here" > backend/.env
-```
-
-2. **Start backend (Docker)**
-```bash
-cd backend
-make up          # Start services
-make migrate     # Run migrations
-```
-
-3. **Start frontend**
-```bash
-cd frontend
-npm install
-npm run generate-client  # Generate TypeScript API client
-npm run dev
-```
-
-### Access the Application
-- **Frontend:** http://localhost:5173
-- **Backend API:** http://localhost:8000
-- **API Docs:** http://localhost:8000/api/docs
-
-### Useful Commands
-```bash
-make down        # Stop services
-make logs        # View logs
-make shell       # Django shell
-```
-
-## 🎯 Demo Credentials
-
-### Student Login
-- Email: `john.doe@email.com`
-- Password: `password123`
-
-### Educator Login
-- Email: `jane.smith@email.com`
-- Password: `password123`
-
-## 🧪 Testing the AI Features
-
-### 1. Test Personalized Learning Path Creation (Educator)
-1. Login as educator
-2. Click "Create Learning Path"
-3. Select student, subject, and difficulty
-4. Notice AI-generated goals appear after creation
-5. Goals are tailored to grade level and subject
-
-### 2. Test Context-Aware AI Mentor (Student)
-1. Login as student
-2. Click "AI Mentor" button
-3. Notice personalized greeting with your progress
-4. Ask subject-specific questions
-5. AI knows your learning context and mastery levels
-
-**Try these prompts:**
-- "Can you help me with the topics I'm struggling with?"
-- "What should I focus on to improve my grade?"
-- "Explain [difficult topic] in simple terms"
 
 ## 🔧 Troubleshooting
 
